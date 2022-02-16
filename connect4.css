@@ -1,0 +1,104 @@
+body {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aliceblue;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+/* game board table */
+
+#board td {
+  width: 50px;
+  height: 50px;
+  border: solid 1px #666;
+}
+
+#game {
+  border: 5px solid black;
+}
+
+form {
+  margin-bottom:10px;
+  display:flex;
+  flex-direction: column;
+  width:250px;
+}
+
+button {
+  font-family: inherit;
+}
+
+#player1{
+  color:red;
+}
+
+#player2{
+  color:blue;
+}
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  animation: drop 1s ease-out;
+}
+
+.p1 {
+  background-color: red;
+}
+
+.p2 {
+  background-color: blue;
+}
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  border: dashed 1px lightgray;
+}
+
+#column-top td:hover {
+  background-color: gold;
+}
+
+#submit,
+#reset {
+  cursor: pointer;
+  background-color: lavenderblush;
+}
+
+#submit:hover,
+#reset:hover {
+  opacity:50%;
+  transform:translateY(-3px);
+}
+
+#reset {
+  margin:10px;
+  padding:5px;
+}
+
+@keyframes drop {
+  0% { transform: translateY(-400px); }
+  100% { transform: translateY(0px); }
+}
+
+
+.p1Lotr {
+  background-image: url(https://compote.slate.com/images/6bb83d91-bd51-49c7-b054-550f5af8dc53.jpg);
+  background-size:cover;
+  background-position: center;
+}
+
+.p2Lotr {
+  background-image: url(https://www.looper.com/img/gallery/gandalfs-backstory-explained/intro-1566589403.jpg);
+  background-size:cover;
+  background-position: center;
+}
+
+#lotr{
+  margin:0;
+  padding:0;
+}
