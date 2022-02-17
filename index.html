@@ -1,33 +1,35 @@
 <!doctype html>
-<head>
-  <title>Connect 4</title>
-  <link href="connect4.css" rel="stylesheet">
-</head>
-<body>
-<div id="header">
-  <h1>Connect Four</h1>
-</div>
-<form action="">
-  <label for="player1" id="player1">Player 1 Name:</label>
-  <input type="text" name="player1" placeholder="Optional">
-  <label for="player2" id="player2">Player 2 Name:</label>
-  <input type="text" name="player2" placeholder = "Optional">
-  <button id="submit">Submit</button>
-</form>
-<div>
-  <p>Click on any of the top squares to drop a piece!</p>
-</div>
-<div id="game">
-  <table id="board"></table>
-</div>
-<div>
-  <button id="reset">New Game</button>
-</div>
-<div>
-  <label for="lotr">LoTR Version</label>
-  <input type="checkbox" id="lotr" name="lotr">
-</div>
-<script src="connect4.js"></script>
-
-</body>
+<html lang = "en">
+  <head>
+    <title>Connect 4</title>
+    <link href="connect4.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header">
+      <h1>Connect Four</h1>
+    </div>
+    <div>
+      <p>Click on any of the top squares to drop a piece!</p>
+    </div>
+    <form id="form-control">
+      <div>
+        <label for="player1">Player 1 Name:</label>
+        <input type="text" id="player1" name="player1" placeholder="Optional">
+      </div>
+      <div>
+        <label for="player2">Player 2 Name:</label>
+        <input type="text" id="player2" name="player2" placeholder = "Optional">
+      </div>
+      <button id="submit-btn">Submit</button>
+    </form>
+    <div id="game">
+      <table id="board"></table>
+    </div>
+    <div>
+      <button id="reset-btn">New Game</button>
+      <label for="lotr-theme">LoTR Version</label>
+      <input type="checkbox" id="lotr-theme" name="lotr-theme">
+    </div>
+    <script src="connect4.js"></script>
+  </body>
 </html>

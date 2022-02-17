@@ -8,33 +8,64 @@ body {
 
 /* game board table */
 
+h1 {
+  font-size: 50px;
+  margin:5px;
+  color:purple;
+}
+
+p {
+  font-size: 30px;
+  margin:5px;
+}
+
 #board td {
-  width: 50px;
-  height: 50px;
-  border: solid 1px #666;
+  width: 60px;
+  height: 60px;
+  border: solid 2px rgb(226, 223, 34);
+  border-radius: 50%;
 }
 
 #game {
   border: 5px solid black;
+  border-radius: 10%;
 }
 
-form {
+#form-control {
   margin-bottom:10px;
   display:flex;
   flex-direction: column;
-  width:250px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#player1,
+#player2 {
+  height:30px;
+  width: 350px;
+  font-size: inherit;
+}
+
+#player1 {
+  margin-left:18px;
+}
+
+#player2 {
+  margin-left:15px;
 }
 
 button {
   font-family: inherit;
 }
 
-#player1{
+label[for=player1] {
   color:red;
+  font-size: 30px;
 }
 
-#player2{
+label[for=player2] {
   color:blue;
+  font-size: 30px;
 }
 /* pieces are div within game table cells: draw as colored circles */
 
@@ -56,28 +87,27 @@ button {
 /* column-top is table row of clickable areas for each column */
 
 #column-top td {
-  border: dashed 1px lightgray;
+  border: dashed 2px red;
 }
 
 #column-top td:hover {
   background-color: gold;
 }
 
-#submit,
-#reset {
+#submit-btn,
+#reset-btn {
   cursor: pointer;
   background-color: lavenderblush;
-}
-
-#submit:hover,
-#reset:hover {
-  opacity:50%;
-  transform:translateY(-3px);
-}
-
-#reset {
+  font-size: 20px;
   margin:10px;
   padding:5px;
+}
+
+#submit-btn:hover,
+#reset-btn:hover {
+  opacity:50%;
+  transform:translateY(-3px);
+  transition-duration: 0.5s;
 }
 
 @keyframes drop {
@@ -85,20 +115,25 @@ button {
   100% { transform: translateY(0px); }
 }
 
-
-.p1Lotr {
-  background-image: url(https://compote.slate.com/images/6bb83d91-bd51-49c7-b054-550f5af8dc53.jpg);
+.p1-lotr {
+  background-image: url("images/lotr-sauron.jpeg");
   background-size:cover;
   background-position: center;
 }
 
-.p2Lotr {
-  background-image: url(https://www.looper.com/img/gallery/gandalfs-backstory-explained/intro-1566589403.jpg);
+.p2-lotr {
+  background-image: url("images/lotr-gandalf.jpeg");
   background-size:cover;
   background-position: center;
 }
 
-#lotr{
+#lotr-theme {
   margin:0;
   padding:0;
+  cursor: pointer;
+}
+
+label[for=lotr-theme]{
+  cursor:pointer;
+  font-size: 20px;
 }

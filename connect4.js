@@ -124,11 +124,11 @@ const placeInTable = (y, x) => {
 
     piece.classList.add("piece");
 
-    if(lotr.checked){
+    if(lotrTheme.checked){
       if(currPlayer === 1){
-        piece.classList.add("p1Lotr");
+        piece.classList.add("p1-lotr");
       } else {
-        piece.classList.add("p2Lotr");
+        piece.classList.add("p2-lotr");
       }
     } else {
       if(currPlayer === 1){
@@ -184,12 +184,12 @@ const checkForWin = () => {
 makeBoard();
 
 //handle custom player names
-const form = document.querySelector('form');
+const formControl = document.querySelector('#form-control');
 const input = document.querySelectorAll('input');
 let p1Name = 'Player 1';
 let p2Name = 'Player 2';
 
-form.addEventListener("submit",(e) => {
+formControl.addEventListener("submit",(e) => {
   p1Name = e.target[0].value;
   p2Name = e.target[1].value;
   e.preventDefault();
@@ -201,8 +201,8 @@ form.addEventListener("submit",(e) => {
 })
 
 //Reset board
-const reset = document.querySelector('#reset');
-reset.addEventListener('click',() => {
+const resetBtn = document.querySelector('#reset-btn');
+resetBtn.addEventListener('click',() => {
   //reset in-JS board
   board = [];
   makeBoard();
@@ -218,12 +218,12 @@ reset.addEventListener('click',() => {
 
 //change background image and piece images to Lord of the Rings theme
 const body = document.querySelector('body');
-const lotr = document.querySelector('#lotr');
+const lotrTheme = document.querySelector('#lotr-theme');
 
-lotr.addEventListener('click',(e) => {
-  let lotrEnabled = lotr.checked;
+lotrTheme.addEventListener('click',(e) => {
+  let lotrEnabled = lotrTheme.checked;
   if(lotrEnabled) {
-    body.style.backgroundImage = 'url(https://media.vanityfair.com/photos/6108358567433342b380092f/5:3/w_2000,h_1200,c_limit/lord-of-the-rings-amazon-studios.png)';
+    body.style.backgroundImage = 'url("images/lotr-background-image.png")';
     body.style.backgroundPosition = 'center';
   } else { //reset when unchecked
     body.style.backgroundImage = '';
