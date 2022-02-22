@@ -1,6 +1,6 @@
 # Connect Four Game
 
-<img src='./sampleConnectFour.gif' alt='Connect Four Gif' height='500' width='500'>
+<img src='./sampleConnectFour.gif' alt='Connect Four Gif' height='350' width='500'>
 
 ## 🧐 Project Description
 
