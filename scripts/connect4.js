@@ -217,6 +217,8 @@ makeBoard(HEIGHT, WIDTH);
 
 //handle custom player names
 formControl.addEventListener("submit", (e) => {
+  e.preventDefault();
+
   if (e.target[0].value) {
     p1Name = e.target[0].value;
   }
@@ -227,10 +229,10 @@ formControl.addEventListener("submit", (e) => {
 
   document
     .querySelector('input[id="player1"]')
-    .setAttribute("placeholder", `${p1Name}`);
+    .setAttribute("placeholder", p1Name);
   document
     .querySelector('input[id="player2"]')
-    .setAttribute("placeholder", `${p2Name}`);
+    .setAttribute("placeholder", p2Name);
   e.target[0].value = "";
   e.target[1].value = "";
 });
