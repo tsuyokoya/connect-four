@@ -167,12 +167,12 @@ const checkForWin = () => {
   }
 
   //checks for the win in all possible four-cell combinations
-  for (var y = 0; y < HEIGHT; y++) {
-    for (var x = 0; x < WIDTH; x++) {
-      var horiz = [[y, x], [y, x + 1], [y, x + 2], [y, x + 3]];
-      var vert = [[y, x], [y + 1, x], [y + 2, x], [y + 3, x]];
-      var diagDR = [[y, x], [y + 1, x + 1], [y + 2, x + 2], [y + 3, x + 3]];
-      var diagDL = [[y, x], [y + 1, x - 1], [y + 2, x - 2], [y + 3, x - 3]];
+  for (let y = 0; y < HEIGHT; y++) {
+    for (let x = 0; x < WIDTH; x++) {
+      let horiz = [[y, x], [y, x + 1], [y, x + 2], [y, x + 3]];
+      let vert = [[y, x], [y + 1, x], [y + 2, x], [y + 3, x]];
+      let diagDR = [[y, x], [y + 1, x + 1], [y + 2, x + 2], [y + 3, x + 3]];
+      let diagDL = [[y, x], [y + 1, x - 1], [y + 2, x - 2], [y + 3, x - 3]];
 
       if (_win(horiz) || _win(vert) || _win(diagDR) || _win(diagDL)) {
         return true;
@@ -216,17 +216,21 @@ resetBtn.addEventListener('click',() => {
   htmlBoard.style.pointerEvents = '';
 })
 
-//change background image and piece images to Lord of the Rings theme
+//change background image, label text, and piece images to Lord of the Rings theme
 const body = document.querySelector('body');
 const lotrTheme = document.querySelector('#lotr-theme');
 
 lotrTheme.addEventListener('click',(e) => {
   let lotrEnabled = lotrTheme.checked;
+  let label = e.target.labels[0];
+
   if(lotrEnabled) {
-    body.style.backgroundImage = 'url("images/lotr-background-image.png")';
+    body.style.backgroundImage = 'url("assets/images/lotr-background-image.png")';
     body.style.backgroundPosition = 'center';
+    label.innerText = 'Normal Version';
   } else { //reset when unchecked
     body.style.backgroundImage = '';
     body.style.backgroundPosition = '';
+    label.innerText = "LoTR Version";
   }
 })
